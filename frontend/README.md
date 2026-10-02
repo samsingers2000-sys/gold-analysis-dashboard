@@ -1,21 +1,12 @@
-# Frontend
+const priceEl = document.getElementById("current-price");
 
-واجهة المستخدم لنظام تحليل الذهب.
+const prices = [330, 334, 338, 342, 336, 344, 348, 351, 353, 355.8];
 
-## محتوى القسم
+const renderPrice = () => {
+  const currentValue = prices[prices.length - 1];
+  if (priceEl) {
+    priceEl.textContent = currentValue.toFixed(2);
+  }
+};
 
-- app/
-- components/
-- hooks/
-- lib/
-- styles/
-
-## المهام الأساسية
-
-- عرض لوحة التحكم الرئيسية
-- عرض أسعار الذهب الحالية
-- الرسوم البيانية
-- صفحة التنبؤات
-- صفحة التنبيهات
-- صفحة التقارير
-- إدارة المستخدمين
+renderPrice();

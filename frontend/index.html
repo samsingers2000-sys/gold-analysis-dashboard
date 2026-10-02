@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم الذهب</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">G</div>
+          <div>
+            <h1>GoldSense</h1>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-item active">لوحة التحكم</button>
+          <button class="nav-item">الأسعار</button>
+          <button class="nav-item">التحليل</button>
+          <button class="nav-item">التنبؤات</button>
+          <button class="nav-item">التنبيهات</button>
+          <button class="nav-item">التقارير</button>
+          <button class="nav-item">الإعدادات</button>
+        </nav>
+
+        <div class="sidebar-card">
+          <p class="label">حالة السوق</p>
+          <div class="status-row">
+            <span class="dot green"></span>
+            <span>سوق صاعد</span>
+          </div>
+          <small>مؤشرات الطلب أعلى من العرض خلال آخر 24 ساعة.</small>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">نظام تحليل الذهب</p>
+            <h2>لوحة التحكم الرئيسية</h2>
+          </div>
+
+          <div class="topbar-actions">
+            <button class="ghost-btn">تحديث</button>
+            <div class="user-box">
+              <div class="avatar">س</div>
+              <div>
+                <strong>سامي</strong>
+                <small>مدير السوق</small>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="stats-grid">
+          <article class="stat-card primary">
+            <div class="stat-header">
+              <span>السعر الحالي</span>
+              <span class="pill positive">+2.4%</span>
+            </div>
+            <h3 id="current-price">355.80</h3>
+            <small>سعر أوقية الذهب</small>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-header">
+              <span>التغير اليومي</span>
+              <span class="pill positive">+1.2</span>
+            </div>
+            <h3>8.15</h3>
+            <small>درهم / رصيد يومي</small>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-header">
+              <span>متوسط 7 أيام</span>
+              <span class="pill neutral">مستقر</span>
+            </div>
+            <h3>349.60</h3>
+            <small>معدل السوق الاسبوعي</small>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-header">
+              <span>توقع اليوم</span>
+              <span class="pill positive">صعود</span>
+            </div>
+            <h3>358.20</h3>
+            <small>التوقع المتحرك</small>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel chart-panel">
+            <div class="panel-header">
+              <h3>مؤشرات الذهب</h3>
+              <div class="range-picker">
+                <button class="range active">24h</button>
+                <button class="range">7d</button>
+                <button class="range">30d</button>
+                <button class="range">90d</button>
+              </div>
+            </div>
+
+            <div class="chart-wrap">
+              <svg id="trend-chart" viewBox="0 0 650 250" preserveAspectRatio="none" aria-label="مخطط أسعار الذهب">
+                <defs>
+                  <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#f6b73c" stop-opacity="0.5" />
+                    <stop offset="100%" stop-color="#f6b73c" stop-opacity="0.02" />
+                  </linearGradient>
+                </defs>
+                <g class="grid-lines">
+                  <line x1="0" y1="20" x2="650" y2="20" />
+                  <line x1="0" y1="80" x2="650" y2="80" />
+                  <line x1="0" y1="140" x2="650" y2="140" />
+                  <line x1="0" y1="200" x2="650" y2="200" />
+                </g>
+                <path class="chart-area" d="M0 180 C80 160, 120 150, 170 140 S260 120, 300 110 S380 80, 420 90 S510 40, 550 60 S620 30, 650 50 L650 250 L0 250 Z"></path>
+                <path class="chart-line" d="M0 180 C80 160, 120 150, 170 140 S260 120, 300 110 S380 80, 420 90 S510 40, 550 60 S620 30, 650 50"></path>
+              </svg>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>التنبيهات</h3>
+              <button class="ghost-btn small">إضافة</button>
+            </div>
+            <ul class="alert-list">
+              <li>
+                <span class="alert-tag up">صعود</span>
+                <div>
+                  <strong>336.00</strong>
+                  <small>تنبيه أعلى من السعر</small>
+                </div>
+              </li>
+              <li>
+                <span class="alert-tag down">هبوط</span>
+                <div>
+                  <strong>328.00</strong>
+                  <small>تنبيه أقل من السعر</small>
+                </div>
+              </li>
+              <li>
+                <span class="alert-tag neutral">ثابت</span>
+                <div>
+                  <strong>342.00</strong>
+                  <small>نقطة استقرار السوق</small>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="bottom-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>أسعار الأسواق</h3>
+              <button class="link-btn">عرض الكل</button>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>السوق</th>
+                  <th>السعر</th>
+                  <th>التغير</th>
+                  <th>الحالة</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>دبي</td>
+                  <td>355.80</td>
+                  <td class="up">+2.4%</td>
+                  <td><span class="badge success">صاعد</span></td>
+                </tr>
+                <tr>
+                  <td>الرياض</td>
+                  <td>352.10</td>
+                  <td class="up">+1.7%</td>
+                  <td><span class="badge success">صاعد</span></td>
+                </tr>
+                <tr>
+                  <td>الدوحة</td>
+                  <td>348.90</td>
+                  <td class="down">-0.4%</td>
+                  <td><span class="badge warning">مستقر</span></td>
+                </tr>
+                <tr>
+                  <td>الكويت</td>
+                  <td>351.25</td>
+                  <td class="up">+0.9%</td>
+                  <td><span class="badge success">صاعد</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>ملخص اليوم</h3>
+            </div>
+
+            <div class="insights">
+              <div class="insight-item">
+                <span class="label">أعلى مستوى</span>
+                <strong>360.30</strong>
+              </div>
+              <div class="insight-item">
+                <span class="label">أدنى مستوى</span>
+                <strong>342.10</strong>
+              </div>
+              <div class="insight-item">
+                <span class="label">التقلب</span>
+                <strong>3.7%</strong>
+              </div>
+              <div class="insight-item">
+                <span class="label">الثقة</span>
+                <strong>78%</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
